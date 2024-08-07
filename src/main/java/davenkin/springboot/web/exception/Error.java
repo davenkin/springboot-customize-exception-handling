@@ -38,8 +38,4 @@ public class Error {
         this.data = data;
     }
 
-    public QErrorResponse toErrorResponse() {
-        return QErrorResponse.builder().error(this).build();
-    }
-
 }

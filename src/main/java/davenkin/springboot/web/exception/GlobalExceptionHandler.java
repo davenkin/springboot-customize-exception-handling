@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
 
     private ResponseEntity<QErrorResponse> createErrorResponse(AppException exception, String path) {
         Error error = new Error(exception, path);
-        QErrorResponse errorResponse = error.toErrorResponse();
+        QErrorResponse errorResponse = QErrorResponse.fromError(error);
         return new ResponseEntity<>(errorResponse, new HttpHeaders(), valueOf(errorResponse.getError().getStatus()));
     }
 

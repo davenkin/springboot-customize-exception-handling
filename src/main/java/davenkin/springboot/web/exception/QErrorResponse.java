@@ -11,4 +11,8 @@ import static lombok.AccessLevel.PRIVATE;
 @AllArgsConstructor(access = PRIVATE)
 public class QErrorResponse {
     Error error;
+
+    public static QErrorResponse fromError(Error error) {
+        return QErrorResponse.builder().error(error).build();
+    }
 }

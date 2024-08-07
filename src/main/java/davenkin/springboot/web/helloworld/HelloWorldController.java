@@ -21,5 +21,4 @@ public class HelloWorldController {
         throw new AppException(USER_NOT_FOUND, "User not found.", "userId", "12345");
     }
 
-
 }

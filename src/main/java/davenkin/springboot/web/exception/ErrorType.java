@@ -1,7 +1,8 @@
 package davenkin.springboot.web.exception;
 
 public enum ErrorType {
-    USER_NOT_FOUND(404);
+    USER_NOT_FOUND(404),
+    USER_NAME_DUPLICATED(409);
 
     private final int status;
 
