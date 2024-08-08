@@ -1,8 +1,15 @@
 package davenkin.springboot.web.exception;
 
 public enum ErrorType {
+    BAD_REQUEST(400),
+    AUTHENTICATION_FAILED(401),
+    ACCESS_DENIED(403),
+    NOT_FOUND(404),
+
     USER_NOT_FOUND(404),
-    USER_NAME_DUPLICATED(409);
+    CONFLICT(409),
+    USER_NAME_DUPLICATED(409),
+    SYSTEM_ERROR(500);
 
     private final int status;
 

@@ -8,18 +8,18 @@ import java.util.Map;
 @Getter
 public final class AppException extends RuntimeException {
     private final ErrorType type;
-    private final Map<String, Object> data = new HashMap<>();
+    private Map<String, Object> data;
 
     public AppException(ErrorType type, String message, Map<String, Object> data) {
         super(message);
         this.type = type;
-        this.data.putAll(data);
+        this.data = data;
     }
 
     public AppException(ErrorType type, String message, Map<String, Object> data, Throwable cause) {
         super(message, cause);
         this.type = type;
-        this.data.putAll(data);
+        this.data = data;
     }
 
 
@@ -37,6 +37,7 @@ public final class AppException extends RuntimeException {
                         String key, Object value) {
         super(message);
         this.type = type;
+        this.data = new HashMap<>(1, 1);
         this.data.put(key, value);
     }
 
@@ -45,6 +46,7 @@ public final class AppException extends RuntimeException {
                         String key2, Object value2) {
         super(message);
         this.type = type;
+        this.data = new HashMap<>(2, 1);
         this.data.put(key1, value1);
         this.data.put(key2, value2);
     }
@@ -55,6 +57,7 @@ public final class AppException extends RuntimeException {
                         String key3, Object value3) {
         super(message);
         this.type = type;
+        this.data = new HashMap<>(3, 1);
         this.data.put(key1, value1);
         this.data.put(key2, value2);
         this.data.put(key3, value3);
@@ -67,6 +70,7 @@ public final class AppException extends RuntimeException {
                         String key4, Object value4) {
         super(message);
         this.type = type;
+        this.data = new HashMap<>(4, 1);
         this.data.put(key1, value1);
         this.data.put(key2, value2);
         this.data.put(key3, value3);
